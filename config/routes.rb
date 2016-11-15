@@ -1,5 +1,6 @@
 LearnRails::Application.routes.draw do
 #  root to: 'visitors#new'
   resource :contacts, only: [:new, :create]
-  root to: 'home#index'
+  resource :visitors, only: [:new, :create]
+  root to: 'visitors#new'
 end
