@@ -57,9 +57,9 @@
   // move this call however you'd like.
   /*  */
   window.analytics.page();
-$(document).on('page:load', function() {
-  console.log('page loaded');
-  analytics.pageview();
-  analytics.trackForm($('#new_visitor'), 'Signed Up');
-  analytics.trackForm($('#new_contact'), 'Contact Request');
-})
+  $(document).on('ready page:change', function() {
+    console.log('page loaded');
+    analytics.page();
+    analytics.trackForm($('#new_visitor'), 'Signed Up');
+    analytics.trackForm($('#new_contact'), 'Contact Request');
+  })
